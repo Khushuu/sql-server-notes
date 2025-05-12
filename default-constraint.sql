@@ -4,6 +4,7 @@ Default constraints
 -- used to insert default value into a column
 -- default value added to the new record if no other value is specified including NULL
 
+-- use DF_table_name_column_name --> naming convention for default constraint
 
 use play
 go
