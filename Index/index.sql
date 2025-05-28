@@ -7,11 +7,15 @@
 -- this is called table scan
 -- table scan is bad for performance
 
+-- usually prefixed by ix followed by table name and column on which indexing is done
+
+e.g: ix_employee_name
+
 ----------------------------------------------------------------------------------------------------
 
 Index creation:
 
-create index idx_employee_salary on employee (salary asc)
+create index ix_employee_salary on employee (salary asc)
 
 -- index stores salary of each employee in ascending order
 -- salary of the employee is mapped to each row or row address 
@@ -34,11 +38,15 @@ select * from employee where salary > 1000 and salary < 6000
 
 execute sp_helptext employee
 
+index_name							index_description										index_keys
+ix_employee_salary					nonclustered located on PRIMARY							salary
+PK__employee__C52E0BA8F25E91F5		clustered, unique, primary key located on PRIMARY		employee_id
+
 ----------------------------------------------------------------------------------------------------
 
 # To delete or drop the index: specify the table name and index name
 
-drop index employee.idx_employee_salary
+drop index employee.ix_employee_salary
 
 ----------------------------------------------------------------------------------------------------
 
