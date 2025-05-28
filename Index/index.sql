@@ -63,4 +63,24 @@ drop index employee.ix_employee_salary
 9. Index with included columns
 10. Index on computed columns
 
+----------------------------------------------------------------------------------------------------
+
+# Covering query:
+
+-- if all columns requested in the SELECT clause of query are present in the index
+-- then there is no need to lookup in the table again 
+-- the requested columns can simply be returned from the index 
+
+-- a clustered index always covers a query - since it contains all of the data in a table
+
+----------------------------------------------------------------------------------------------------
+
+# Composite index
+
+-- an index on two or more columns
+-- both clustered and nonclustered indexes can be composite indexes
+
+----------------------------------------------------------------------------------------------------
+
+
 
